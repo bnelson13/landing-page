@@ -1,13 +1,6 @@
-# Landing Page Project
+# Landing Page Project by Brad Nelson
 
-## Table of Contents
 
-* [Instructions](#instructions)
+## Submission
 
-## Instructions
-
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+This is for the second Udacity Front End Web Developer project. The starter code was used with a new 4th section and JS file that will add active sections, slow scroll to internal links, and create a navigation bar.
