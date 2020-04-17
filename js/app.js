@@ -14,7 +14,7 @@ const addLinks = function(ele) {
         //Creates a list item each time until i is maxed
         newLI = document.createElement('LI');
         //Adds a link with the section name of where i is currently
-        newLI.innerHTML = `<a href='#section${i}' class='menu__link'>Section ${i}</a>`;
+        newLI.innerHTML = `<a href='#section${i}' id='link${i}' class='menu__link'>Section ${i}</a>`;
         //Appends this new child to the navigation bar
         navbar_list.appendChild(newLI);
     };
@@ -31,7 +31,7 @@ const config = {
     //As soon as 1 pixel enters in reference frame it is triggered
     rootMargin: '0px',
     //20% of observed image may be in our threshold
-    threshold: 0.2
+    threshold: .8
 };
 let isLeaving = false;
 
@@ -40,11 +40,12 @@ let observer = new IntersectionObserver(function (entries) {
         //If statement allows us to set whether the observed element is entering or leaving frame
         if(entry.isIntersecting) {
             isLeaving = true;
+            document.getElementById(`link${entry.target.id.slice(-1)}`).className = 'your-active-link';
             entry.target.className = 'your-active-class';
         } else if (isLeaving) {
             isLeaving = false;
             entry.target.className = '';
-            console.log(entry.target)
+            document.getElementById(`link${entry.target.id.slice(-1)}`).className = 'menu__link';
         } 
     });
 }, config);
